@@ -5,34 +5,23 @@ import App, { Container } from "next/app";
 import "./Index.scss";
 
 export default class MyApp extends App {
-
   static async getInitialProps({ Component }) {
     try {
-
       // Fetch global app data here
-
       let pageProps;
       // if page component has getInitialProps, call it
-      if (Component.getInitialProps) {
+      if (Component && Component.getInitialProps) {
         pageProps = await Component.getInitialProps();
       }
 
-      return {pageProps};
-      
+      return { pageProps };
     } catch (e) {
-      console.log(e);
-      return {};
+      return console.error(e);
     }
   }
 
-
   render() {
-    const {
-      Component,
-      pageProps,
-    } = this.props;
-   
-
+    const { Component, pageProps } = this.props;
 
     const title = "";
     const description = "";
@@ -128,11 +117,7 @@ export default class MyApp extends App {
           <meta name="theme-color" content="#f04323" />
         </Head>
 
-
-          <Component
-            {...pageProps}
-          />
-          
+        <Component {...pageProps} />
       </Container>
     );
   }

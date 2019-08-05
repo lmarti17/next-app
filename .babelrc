@@ -7,10 +7,10 @@
         "root": ["./"],
         "alias": {
           "components": "./components",
+          "layout": "./layout",
           "pages": "./pages",
           "constants": "./constants",
           "static": "./static",
-          "contexts": "./contexts",
           "helpers": "./helpers",
           "hooks": "./hooks"
         }

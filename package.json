@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "export": "next build && next export",
     "deploy": "now --target production",
     "clean-babel-cache": "rm -Rf ./node_modules/.cache/babel-loader/*"
   },

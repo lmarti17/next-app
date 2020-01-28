@@ -14,8 +14,8 @@ export default class MyApp extends App {
       }
 
       return { pageProps };
-    } catch (e) {
-      return console.error(e);
+    } catch (error) {
+      return { error };
     }
   }
 

@@ -2,16 +2,16 @@
 // Event handlers like onClick can't be added to this file
 
 // ./pages/_document.js
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   render() {
-    const title = "";
-    const description = "";
-    const url = "";
-    const image = "";
-    const author = "";
-    const keywords = [];
+    const title = ''
+    const description = ''
+    const url = ''
+    const image = ''
+    const author = ''
+    const keywords = []
 
     return (
       <Html lang="en">
@@ -22,7 +22,7 @@ class MyDocument extends Document {
           <meta name="googlebot" content="index,follow" key="googlebot" />
           <meta name="description" content={description} key="description" />
           <meta name="author" content={author} />
-          <meta name="keywords" content={keywords.join(",")} />
+          <meta name="keywords" content={keywords.join(',')} />
           <meta
             name="geo.placename"
             content="Vienna, Austria"
@@ -97,8 +97,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument

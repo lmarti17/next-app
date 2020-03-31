@@ -14,7 +14,7 @@
   "author": "Lucas Martin <contact@lucasmartin.fr> (http://lucasmartin.fr/)",
   "license": "UNLICENSED",
   "dependencies": {
-    "next": "^9.2.1",
+    "next": "^9.3.2",
     "node-sass": "^4.13.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"

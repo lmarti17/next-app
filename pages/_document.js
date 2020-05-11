@@ -5,6 +5,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
+  // eslint-disable-next-line class-methods-use-this
   render() {
     const title = ''
     const description = ''
@@ -35,7 +36,21 @@ class MyDocument extends Document {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
             key="viewport"
           />
-          <script src="/static/scripts/modernizr.js" />
+
+          {/* @TODO - remove before going live */}
+          <meta name="robots" content="noindex,nofollow" key="robots" />
+
+          {/* Establish an early connection to the following domain, improving performances (https://web.dev/uses-rel-preconnect) */}
+          {/* <link rel="preconnect" hrefLang="en-us" href="" crossOrigin />
+          <link rel="preconnect" hrefLang="en-us" href="" crossOrigin /> */}
+          {/* preload fonts for better performances */}
+          {/* <link
+            rel="preload"
+            href="/static/fonts/Toy/toyregular-desktop-webfont.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin
+          /> */}
 
           <meta property="og:type" content="website" key="og:type" />
           <meta property="og:site_name" content={title} key="og:site_name" />
@@ -50,7 +65,7 @@ class MyDocument extends Document {
           <meta property="og:image:width" content="1300" key="og:image:width" />
           <meta
             property="og:image:height"
-            content="732"
+            content="630"
             key="og:image:height"
           />
           <meta
@@ -66,7 +81,7 @@ class MyDocument extends Document {
           />
           <meta name="twitter:image" content={image} key="twitter:image" />
 
-          <meta name="msapplication-config" content="/browserconfig.xml" />
+          {/* <meta name="msapplication-config" content="/browserconfig.xml" />
 
           <link
             rel="apple-touch-icon"
@@ -89,7 +104,7 @@ class MyDocument extends Document {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2c2c2c" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="msapplication-TileColor" content="#ffffff" />
-          <meta name="theme-color" content="#ffffff" />
+          <meta name="theme-color" content="#ffffff" /> */}
           <title key="title">{title}</title>
         </Head>
         <body>

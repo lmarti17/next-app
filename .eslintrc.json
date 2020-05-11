@@ -5,20 +5,19 @@
     "es6": true,
     "node": true
   },
-  "extends": ["airbnb-base", "standard-preact", "prettier"],
+  "extends": ["airbnb-base", "prettier", "prettier/react"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 2018
   },
-  "plugins": ["prettier", "react", "import", "promise"],
+  "plugins": ["prettier", "react"],
   "rules": {
     "prettier/prettier": "error",
     "no-console": "warn",
     "react/jsx-uses-vars": [2],
-    "import/no-unresolved": 0,
-    "camelcase": "off",
-    "class-methods-use-this": "off"
+    "import/no-unresolved": "off",
+    "camelcase": "off"
   }
 }

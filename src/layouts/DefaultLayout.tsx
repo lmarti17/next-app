@@ -17,7 +17,7 @@ const globalSeoConfig: DefaultSeoProps = {
     type: 'website',
     locale: 'en_US',
     url: process.env.PUBLIC_URL,
-    site_name: 'The Great Wave',
+    site_name: 'Example',
   },
   twitter: {
     handle: '@handle',
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    ${tw`text-base font-suisse text-black antialiased tracking-default`}
+    ${tw`text-base text-black antialiased tracking-default`}
   }
 
   .js-focus-visible :focus:not(.focus-visible) {

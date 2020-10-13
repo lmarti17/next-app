@@ -24,7 +24,7 @@
     "paths": {
       "root/*": ["./*"],
       "src/*": ["./src/*"],
-      "types/*": ["types/*"]
+      "types/*": ["types/*"],
     }
   },
   "exclude": ["node_modules"],

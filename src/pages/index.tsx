@@ -1,11 +1,12 @@
 import tw from 'twin.macro'
+import DefaultLayout from 'src/layouts/DefaultLayout'
 
 const Title = tw.h1`text-red`
 
 const HomePage = () => (
-  <div className="home">
+  <DefaultLayout>
     <Title>hello world !</Title>
-  </div>
+  </DefaultLayout>
 )
 
 export default HomePage

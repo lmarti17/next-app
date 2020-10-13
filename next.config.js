@@ -1,36 +1,16 @@
-/* this is needed to make sass work with now serverless */
+const withCSS = require('@zeit/next-css')
+const withBundleAnalyzer = require('@next/bundle-analyzer')
 
-const { PHASE_PRODUCTION_SERVER } =
-  // eslint-disable-next-line no-nested-ternary
-  process.env.NODE_ENV === 'development'
-    ? {} // We're never in "production server" phase when in development mode
-    : !process.env.NOW_REGION
-    ? require('next/constants') // Get values from `next` package when building locally
-    : require('next-server/constants') // Get values from `next-server` package when building on now v2
-
-module.exports = phase => {
-  if (phase === PHASE_PRODUCTION_SERVER) {
-    // Config used to run in production.
-    return {}
-  }
-
-  // eslint-disable-next-line global-require
-  const withSass = require('@zeit/next-sass')
-
-  return withSass({
-    // target: 'serverless',
-    webpack(config) {
-      config.module.rules.push({
-        test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 100000,
-            name: '[name].[ext]',
-          },
-        },
-      })
-      return config
-    },
-  })
+let config = {
+  webpack: (config, { isServer }) => {
+    // Fixes npm packages that depend on `fs` module.
+    if (!isServer) config.node = { fs: 'empty' }
+    return config
+  },
 }
+
+config = withCSS(config)
+
+config = withBundleAnalyzer({ enabled: process.env.ENV === 'production' })(config)
+
+module.exports = config

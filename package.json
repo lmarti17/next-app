@@ -5,7 +5,7 @@
   "main": "next",
   "author": "Lucas Martin <contact@lucasmartin.fr> (http://lucasmartin.fr/)",
   "scripts": {
-    "dev": "concurrently \"NODE_OPTIONS='--inspect' next dev\" \"npm:typegen -- --watch\"",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "start": "next start",
     "build": "npm run clear && next build",
     "clear": "rm -rf dist/ && rm -rf .next/ && rm -rf node_modules/.cache",
@@ -30,7 +30,6 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@zeit/next-css": "1.0.1",
-    "concurrently": "^5.3.0",
     "lazysizes": "^5.2.2",
     "next": "^9.5.5",
     "next-seo": "4.7.3",

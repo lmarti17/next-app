@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    ${tw`text-base text-black antialiased tracking-default`}
+    ${tw`text-black antialiased`}
   }
 
   .js-focus-visible :focus:not(.focus-visible) {

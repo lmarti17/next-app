@@ -32,6 +32,8 @@ module.exports = {
       // medium: 500,
     },
     colors: {
+      black: '#000000',
+      white: '#FFFFFF',
       red: '#FF0000',
     },
     letterSpacing: {

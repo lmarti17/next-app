@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "alias": ["example.now.sh"],
-  "regions": ["bru"],
-  "public": false,
-  "github": {
-    "enabled": true
-  }
-}

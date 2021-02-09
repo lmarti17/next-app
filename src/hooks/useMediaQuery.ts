@@ -21,9 +21,9 @@ const useMediaQuery = (bp: Breakpoint) => {
     const mediaQueryList = window.matchMedia(query)
     const listener = (e: MediaQueryListEvent) => setMatches(e.matches)
 
-    mediaQueryList.addListener(listener)
+    mediaQueryList.addEventListener('change', listener)
     setMatches(mediaQueryList.matches)
-    return () => window && mediaQueryList.removeListener(listener)
+    return () => window && mediaQueryList.removeEventListener('change', listener)
   }, [query])
 
   return matches
